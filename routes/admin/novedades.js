@@ -32,7 +32,7 @@ router.post("/agregar", async (req, res, next) => {
       req.body.subtitulo != "" &&
       req.body.cuerpo != ""
     ) {
-      await novedadesModel.insertNovedad(req.body);
+      await novedadesModel.insertNovedadesById(req.body);
       res.redirect("/admin/novedades");
     } else {
       res.render("admin/agregar", {
